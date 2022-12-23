@@ -1,0 +1,572 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+.search-container,
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px;
+  background: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 1px solid #999;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+.search-container input {
+  width: 700px;
+  height: 50px;
+  padding: 12px 15px;
+  background: #fff;
+  border: 1px solid #999;
+  outline: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 200;
+  color: #032541;
+}
+.search-container .search-icon {
+  position: relative;
+  top: 5px;
+  right: 40px;
+  color: #8d8b8b;
+  font-size: 25px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+.search-container .menu,
+nav .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.menu a {
+  text-decoration: none;
+  color: #8d8b8b;
+  padding: 8px 12px;
+  margin: 0 15px;
+  letter-spacing: 2px;
+  position: relative;
+}
+.menu a.active::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #8d8b8b;
+  top: 0;
+  left: -20px;
+}
+.menu a.active::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #8d8b8b;
+  top: 0;
+  right: -20px;
+}
+.menu a.active {
+  font-weight: 500;
+  background: #8d8b8b;
+  color: #fff;
+}
+.container-series .row-prev-next {
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+}
+.row-prev-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.row-prev-next .prev,
+.next {
+  padding: 13px 20px;
+  background: dodgerblue;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+.row-prev-next .prev::before,
+.row-prev-next .next::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-right: 25px solid dodgerblue;
+  top: 0;
+  left: -25px;
+}
+.row-prev-next .prev::after,
+.row-prev-next .next::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 25px solid dodgerblue;
+  top: 0;
+  right: -25px;
+}
+.row-prev-next .disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.row-prev-next .value-page {
+  color: dodgerblue;
+  font-weight: 800;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #8d8b8b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-series {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: #fff;
+  padding: 12px;
+}
+.container-series .card {
+  border: 2px solid #8d8b8b;
+  position: relative;
+  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.8);
+  width: 360px;
+  overflow: hidden;
+}
+.container-series .card img {
+  height: 420px;
+  width: 100%;
+}
+.container-series .card .title {
+  position: absolute;
+  top: 0;
+  padding: 12px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  color: #8d8b8b;
+  font-weight: 700;
+  display: none;
+  text-transform: uppercase;
+}
+.container-series .card .detail-btn {
+  text-decoration: none;
+  background: #fff;
+  color: #55727c;
+  border: 1px solid #55727c;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+  margin: 12px;
+  padding: 8px 15px;
+  border-radius: 8px;
+}
+.container-series .card .detail-btn:focus {
+  outline: 2px solid #fff;
+}
+.container-series .card:hover .title {
+  display: block;
+}
+.container-serie-details {
+  padding: 12px;
+  position: relative;
+  background: #fff;
+  text-align: center;
+}
+.container-serie-details .img-serie {
+  height: 400px;
+  border: 3px solid #333;
+}
+.serie-details {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  gap: 25px;
+  background: transparent;
+  padding: 10px;
+  text-align: center;
+}
+.serie-details > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  position: relative;
+  color: #333;
+  background: #fff;
+  padding: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+  text-transform: capitalize;
+  border: 2px solid #55727c;
+}
+.serie-details span {
+  color: #55727c;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  position: relative;
+  margin: 0 10px;
+}
+.serie-details span::before{
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -15px;
+  width: 5px;
+  height: 5px;
+  border: 3px solid #55727c;
+  border-radius: 20%;
+  background:transparent;
+}
+.serie-details .genres button {
+  background: transparent;
+  font-weight: 500;
+  border: none;
+  color: #333;
+  font-size: 18px;
+}
+.serie-details .companies {
+  display: flex;
+  flex-direction: column;
+}
+.serie-details .companies .companies-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  padding: 8px;
+  box-shadow: 0 5px 10px rgba(30, 143, 255, 0.647);
+  border-radius: 3px;
+  color: #333;
+}
+.serie-details .rating svg {
+  font-size: 20px;
+  color: gold;
+}
+.container-serie-details .back-btn,
+.container-image .back-btn,
+.container-seasons .back-btn {
+  position: fixed;
+  top: 0;
+  left: 25px;
+  z-index: 1000;
+  background: #8d8b8b;
+  color: #f5f5f5;
+  font-weight: 600;
+  border: none;
+  font-size: 16px;
+  gap: 7px;
+  margin: 8px;
+  padding: 13px 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+.container-serie-details .back-btn::before,
+.container-image .back-btn::before,
+.container-seasons .back-btn::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-right: 25px solid #8d8b8b;
+  top: 0;
+  left: -25px;
+}
+.container-serie-details .back-btn::after,
+.container-image .back-btn::after,
+.container-seasons .back-btn::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 25px solid #8d8b8b;
+  top: 0;
+  right: -25px;
+}
+.undefind {
+  display: none;
+}
+.seasonsCard {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 35px 0;
+}
+.seasonsCard .card-season {
+  background: #fff;
+  padding-bottom: 12px;
+  width: 400px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.seasonsCard .card-season > * {
+  font-weight: 400;
+  color: #252525;
+  font-size: 18px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.seasonsCard .card-season img {
+  height: 400px;
+  width: 100%;
+}
+.seasonsCard .card-season span {
+  font-weight: 400;
+  color: #fff;
+  background: #55727c;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.seasonsCard .card-season .season-detail-btn {
+  text-decoration: none;
+  width: 120px;
+  height: 50px;
+  color: #55727c;
+  background: #fff;
+  border: 2px solid #55727c;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 30px;
+  margin-top: 12px;
+}
+.seasonsCard .card-season .season-detail-btn svg {
+  transition: 0.6s ease;
+}
+.seasonsCard .card-season .season-detail-btn:hover {
+  background: rgb(238, 238, 238);
+}
+.seasonsCard .card-season .season-detail-btn:hover svg {
+  transform: rotate(360deg) scale(1.5);
+}
+.container-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 12px;
+}
+.container-image img {
+  height: 250px;
+  border: 2px solid #55727c;
+  border-radius: 5px;
+  box-shadow: 0 5px 13px rgb(155, 155, 155);
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.dropdown-list .menu-detail {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.menu-detail button {
+  width: 100%;
+  background: transparent;
+  color: #55727c;
+  border: none;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  gap: 6px;
+  cursor: pointer;
+}
+.menu-detail .sub-menu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  display: none;
+  z-index: 2;
+  text-align: center;
+}
+.menu-detail .sub-menu a {
+  color: #fff;
+  text-decoration: none;
+  background: #55727c;
+  padding: 15px 20px;
+  width: 100%;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.menu-detail .sub-menu a:hover {
+  text-decoration: underline;
+}
+.menu-detail:hover .sub-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu-detail button svg {
+  transition: 0.5s all ease;
+}
+.menu-detail:hover button svg {
+  transform: rotate(180deg);
+}
+.container-seasons {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.container-seasons .season-guide {
+  width: 500px;
+  margin: 15px auto;
+  background: #f1f1f1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  border-radius: 8px;
+}
+.container-seasons .season-guide img {
+  height: 320px;
+}
+.container-seasons .season-guide .season-number {
+  background: #55727c;
+  color: #fff;
+  padding: 8px;
+  font-size: 20px;
+}
+.season-guide .overview {
+  line-height: 25px;
+}
+.season-guide .overview::first-letter {
+  font-size: 23px;
+  color: #55727c;
+}
+.season-guide .release-date {
+  font-size: 25px;
+  color: #55727c;
+  margin-bottom: 15px;
+}
+.container-seasons .episodes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 12px;
+}
+.episodes .episode {
+  background: #fff;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+  border: 2px solid #55727c;
+  width: 400px;
+}
+.episodes .episode > *:not(:first-child) {
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 8px 12px;
+  color: #55727c;
+}
+.episodes .episode svg {
+  color: gold;
+}
+.episodes .episode span {
+  font-weight: 200;
+  margin-right: 20px;
+  color: #252525;
+}
+.container-seasons .episodes .episode img {
+  height: 200px;
+  width: 100%;
+}
+.container-genres{
+  padding: 12px;
+  box-shadow: 0 5px 13px #55727c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.container-genres button{
+  padding: 8px 20px;
+  background: #fff;
+  border: 2px solid #55727c;
+  color: #55727c;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 30px;
+}
+.container-genres button:focus{
+  background: #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
